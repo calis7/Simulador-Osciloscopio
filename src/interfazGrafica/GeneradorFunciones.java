@@ -328,7 +328,7 @@ public class GeneradorFunciones extends JPanel {
 	/**
 	 * 
 	 * @param actionevent1
-	 * Limpia la pantalla donde se visializa la señal
+	 * Limpia la pantalla donde se visualiza la señal
 	 */
 	
 	private void btnReanudarActionPerformed(ActionEvent actionevent1) {
@@ -342,7 +342,7 @@ public class GeneradorFunciones extends JPanel {
 			p.dibujarPlano();
 
 		} else {
-			setEscala(30);
+			setEscala(20);
 
 		}
 	}
@@ -354,6 +354,7 @@ public class GeneradorFunciones extends JPanel {
 	 * @param evt
 	 * 
 	 * Ejecuta las acciones de graficar al oprimir el botón por cada tipo de señal.
+	 * Se aplican manejo de excepciones y errores
 	 */
 	
 	private void btnGenerarActionPerformed(ActionEvent evt) {
