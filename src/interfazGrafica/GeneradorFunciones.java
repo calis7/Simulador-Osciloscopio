@@ -171,7 +171,7 @@ public class GeneradorFunciones extends JPanel {
 		jSliderVoltaje.setMinorTickSpacing(1);
 		jSliderVoltaje.setValue(7);
 		jSliderVoltaje.setOrientation(SwingConstants.VERTICAL);
-		// jSliderVoltaje.addChangeListener(this::jSliderVoltajeAmpStateChanged);
+		
 
 		jSliderPeriodo = new JSlider();
 		jSliderPeriodo.addChangeListener(new ChangeListener() {
@@ -295,7 +295,7 @@ public class GeneradorFunciones extends JPanel {
 
 		comboBoxTipoSenial.setModel(
 				new javax.swing.DefaultComboBoxModel<>(new String[] { "Sinusoidal", "Cuadrada", "Triangular" }));
-		// comboBoxTipoSenial.addActionListener(this);
+		
 
 		comboBoxTipoSenial.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -395,112 +395,7 @@ public class GeneradorFunciones extends JPanel {
 	}
 
 
-/**	
-	
-	private void btnGenerarActionPerformed(ActionEvent evt) {
 
-
-		if (comboBoxTipoSenial.getSelectedItem() == "Sinusoidal") {
-			// dibuja una onda sinusoidal
-
-			if (tfVoltaje.getText().equals("0") || tfPeriodo.getText().equals("0")) {
-				JOptionPane.showMessageDialog(this, "Ingrese valores al menos para Amplitud y Frecuencia");
-			} else {
-
-				try {
-					periodo = Double.parseDouble(tfPeriodo.getText());
-					amplitud = Double.parseDouble(tfVoltaje.getText());
-					desfase = Double.parseDouble(tfDesfase.getText());
-
-				} catch (NumberFormatException ex) {
-
-					JOptionPane.showMessageDialog(null, "Debe ingresar valores numéricos", "Error",
-							JOptionPane.ERROR_MESSAGE);
-				}
-
-				Plano p = new Plano(pantallaSenialInterior, escala);
-				p.dibujarPlano();
-				OndaSeno.dibujarOndaSeno(p, amplitud, periodo, desfase);
-
-				if ((amplitud > 20) || (periodo > 20)) {
-					// Mostrar un mensaje de error si el valor está fuera del rango
-					JOptionPane.showMessageDialog(this, "El valor debe estar entre 0 y 20", "Error",
-							JOptionPane.ERROR_MESSAGE);
-
-				}
-			}
-		}
-
-		if (comboBoxTipoSenial.getSelectedItem() == "Cuadrada") {
-			// dibuja onda cuadrada
-
-			if (tfVoltaje.getText().equals("0") || tfPeriodo.getText().equals("0")) {
-				JOptionPane.showMessageDialog(this, "Ingrese valores al menos para Amplitud y Frecuencia");
-			} else {
-
-				try {
-				
-				periodo = Double.parseDouble(tfPeriodo.getText());
-				amplitud = Double.parseDouble(tfVoltaje.getText());
-				desfase = Double.parseDouble(tfDesfase.getText());
-				
-
-				} catch (NumberFormatException ex) {
-
-					JOptionPane.showMessageDialog(null, "Debe ingresar valores numéricos", "Error",
-							JOptionPane.ERROR_MESSAGE);
-				}
-
-				Plano p = new Plano(pantallaSenialInterior, escala);
-				p.dibujarPlano();
-				OndaCuadrada.dibujarOndaCuadrada(p, amplitud, periodo, desfase);
-
-				if (amplitud > 20) {
-					// Mostrar un mensaje de error si el valor está fuera del rango
-					JOptionPane.showMessageDialog(this, "El valor debe estar entre 0 y 20", "Error",
-							JOptionPane.ERROR_MESSAGE);
-
-				}
-
-			}
-
-		}
-
-		if (comboBoxTipoSenial.getSelectedItem() == "Triangular") {
-
-			if (tfVoltaje.getText().equals("0") || tfPeriodo.getText().equals("0")) {
-				JOptionPane.showMessageDialog(this, "Ingrese valores al menos para Amplitud y Frecuencia");
-			} else {
-
-				// ***dibuja onda triangular ******* //
-				
-				try {
-				periodo = Double.parseDouble(tfPeriodo.getText());
-				amplitud = Double.parseDouble(tfVoltaje.getText());
-				desfase = Double.parseDouble(tfDesfase.getText());
-				
-
-				} catch (NumberFormatException ex) {
-
-					JOptionPane.showMessageDialog(null, "Debe ingresar valores numéricos", "Error",
-							JOptionPane.ERROR_MESSAGE);
-				}
-
-				Plano p = new Plano(pantallaSenialInterior, escala);
-				p.dibujarPlano();
-				OndaTriangular.dibujarOndaTriangular(p, amplitud, periodo, desfase);
-
-				if (amplitud > 20) {
-					// Mostrar un mensaje de error si el valor está fuera del rango
-					JOptionPane.showMessageDialog(this, "El valor debe estar entre 0 y 20", "Error",
-							JOptionPane.ERROR_MESSAGE);
-				}
-			}
-
-		}
-
-	}
-**/
 	
 	/**
 	 * 
@@ -548,29 +443,7 @@ public class GeneradorFunciones extends JPanel {
 	 * @param evt
 	 * 
 	 */
-/**
-	private void pantallaSenialInteriorMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
-		// TODO add your handling code here:
 
-		if (comboBoxTipoSenial.getSelectedItem().equals("Sinusoidal")) {
-			setClicks(evt.getWheelRotation());
-			// jSliderEscala.getValue();
-			ajustarEscala("sinusoidal");
-		}
-		
-
-		else if (comboBoxTipoSenial.getSelectedItem().equals("Cuadrada")) {
-			setClicks(evt.getWheelRotation());
-			ajustarEscala("cuadrada");
-		}
-
-		else if (comboBoxTipoSenial.getSelectedItem().equals("Triangular")) {
-			setClicks(evt.getWheelRotation());
-			ajustarEscala("triangular");
-		}
-
-	}
-**/
 	
 	private void pantallaSenialInteriorMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
 	    // Se obtiene el tipo de onda seleccionado
